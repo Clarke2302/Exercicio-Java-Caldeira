@@ -9,7 +9,7 @@ public class exercicio5 {
 
         String [] editada = frase.split(",");
 
-        System.out.println("Frase com edição:"+"\n"+"\n"+editada[0]+"\n"+editada[1]);
+        System.out.println("Frase com edição:"+"\n"+"\n"+editada[0]);
 
 
 
