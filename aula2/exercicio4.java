@@ -12,11 +12,8 @@ public class exercicio4 {
             int tecl = tec.nextInt();
 
             while(tecl!=0){
-
             
 
-
-                
             System.out.println("-----------------------------");
             System.out.println("Calculadora"+"\n");
             System.out.println("Para Soma, digite 1:");
@@ -24,19 +21,42 @@ public class exercicio4 {
             System.out.println("Para Multiplicação, digite 3:");
             System.out.println("Para Divisão, digite 4:");
             System.out.println("Para Sair do programa, digite 0:");
-
+            System.out.printf("Digite: ");
             int tecla = tec.nextInt();
 
-            if(tecla==1){
 
+            if(tecla==1){
+                System.out.println("\n"+"----------------------------------"+"\n"+"Digite o primeiro número que deseja somar: ");
+                int n1 = tec.nextInt();
+                System.out.println("Digite o segundo número que deseja somar: ");
+                int n2 = tec.nextInt();
+                int soma = n1+n2;
+                System.out.println("Sua soma é = "+soma);
             }
             if(tecla==2){
-
+                System.out.println("\n"+"----------------------------------"+"\n"+"Digite o primeiro número que deseja subtrair: ");
+                int n1 = tec.nextInt();
+                System.out.println("Digite o segundo número que deseja subtrair: ");
+                int n2 = tec.nextInt();
+                int sub = n1-n2;
+                System.out.println("Sua subtração é = "+sub);
             }
             if(tecla==3){
+                System.out.println("\n"+"----------------------------------"+"\n"+"Digite o primeiro número que deseja multiplicar: ");
+                int n1 = tec.nextInt();
+                System.out.println("Digite o segundo número que deseja multiplicar:  ");
+                int n2 = tec.nextInt();
+                int multi = n1*n2;
+                System.out.println("Sua multiplicação é = "+multi);
 
             }
             if(tecla==4){
+                System.out.println("\n"+"----------------------------------"+"\n"+"Digite o primeiro número que deseja dividir: ");
+                int n1 = tec.nextInt();
+                System.out.println("Digite o segundo número que deseja dividir: ");
+                int n2 = tec.nextInt();
+                int div = n1/n2;
+                System.out.println("Sua divisão é = "+div);
 
             }
             if(tecl==0){
