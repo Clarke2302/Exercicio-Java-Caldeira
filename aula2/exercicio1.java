@@ -1,53 +1,38 @@
-package aula2;
-
 import java.util.Scanner;
-public class exercicio1 {
-    public static void main(String[] args) {
-        Scanner tec = new Scanner (System.in);
-        int mostraPrimo;
-        int interInicio;
-        int interFim;
-        
-        System.out.println("Programa Números Primos");
+    public class primao {
+        public static void main(String[] args) {
+            Scanner tec = new Scanner(System.in);
+            int interInicio;
+            int interFim;
 
-        System.out.println("Digite o número inicial: ");
-        interInicio = tec.nextInt();
-        System.out.println("Digite o número final: ");
-        interFim = tec.nextInt();
-        
+            System.out.println("Programa Números Primos");
 
-        int i=1;
-        int conta = 0;
+            System.out.println("Digite o número inicial: ");
+            interInicio = tec.nextInt();
+            System.out.println("Digite o número final: ");
+            interFim = tec.nextInt();
 
-        int um = interInicio;
-        //int dois = interFim;
-        
-        //primos divididos/1 e /por ele mesmo == 0
-        //entre o inicio e o fim quantos primos tem??
+            if (interInicio == 1) {
+                interInicio++;
+            }
 
-        //variavel aumenta  ex: 200 a 400  200/1 200/2 até 200/200
-        if(interInicio<interFim){
-            System.out.println("Primos Encontrados: "+"\n");
-
-            while(){
-
-                System.out.println("dd");
-                if(interInicio%i==0){
-                    conta++;
+            for (int i = interInicio; i < -interFim; i++) {
+                if (ehPrimo(i)) {
+                    System.out.println(i+ " é primo.");
                 }
-                if(conta==2){
-                System.out.println(um);
             }
-                i++;
-            }
-            interInicio++;
         }
 
 
-        if(interInicio>interFim){
+            private static boolean ehPrimo (int numero) {
+                for (int j = 2; j < numero; j++) {
 
-        }
+                    if (numero % j ==0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
 
-    }
-    
-}
+
+
