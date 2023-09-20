@@ -1,5 +1,5 @@
 import java.util.Scanner;
-    public class primao {
+    public class exercicio1 {
         public static void main(String[] args) {
             Scanner tec = new Scanner(System.in);
             int interInicio;
@@ -12,11 +12,9 @@ import java.util.Scanner;
             System.out.println("Digite o número final: ");
             interFim = tec.nextInt();
 
-            if (interInicio == 1) {
-                interInicio++;
-            }
 
-            for (int i = interInicio; i < -interFim; i++) {
+
+            for (int i = interInicio; i <= interFim; i++) {
                 if (ehPrimo(i)) {
                     System.out.println(i+ " é primo.");
                 }
@@ -25,14 +23,15 @@ import java.util.Scanner;
 
 
             private static boolean ehPrimo (int numero) {
-                for (int j = 2; j < numero; j++) {
+                for (int j = 1; j < numero; j++) {
 
-                    if (numero % j ==0) {
+                    if (numero % j == 0) {
                         return false;
                     }
                 }
                 return true;
             }
+        }
 
 
 

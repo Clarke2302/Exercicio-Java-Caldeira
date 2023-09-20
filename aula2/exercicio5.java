@@ -5,11 +5,12 @@ public class exercicio5 {
     public static void main (String[]args){
 
         String frase = "Helena ama coelhos, ela tem um de pelúcia.";
-        System.out.println("Frase sem edição: "+"\n"+"\n"+frase+"\n");
+        System.out.println("-----------------------------------------"+"\n"
+        +"Frase sem edição: "+"\n"+"\n"+frase+"\n"+"-----------------------------------------");
 
         String [] editada = frase.split(",");
 
-        System.out.println("Frase com edição:"+"\n"+"\n"+editada[0]);
+        System.out.println("Frase com edição:"+"\n"+"\n"+editada[0]+".");
 
 
 
