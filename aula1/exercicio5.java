@@ -7,10 +7,13 @@ public class exercicio5 {
 
         int horaPMin= hora*3600; //hora dividido por 1 hora = 3660 seg
         int minPSeg = horaPMin+(minuto*60); //hora em seg + minuto para seg 1 min = 60 seg
-        int contaSegundos = minPSeg+segundo; //soma tudo e vira segundo
-        int contaMeiaNoite = contaSegundos ;
+        int contaSegundosPassados = minPSeg+segundo; //soma tudo e vira segundo
+        int contaMeiaNoite = 86400 - contaSegundosPassados ;
 
-        System.out.println("Quantos segundos se passaram desde às 0h00min0s? "+contaSegundos+" segundos"+"/n"+"Quantos segundos faltam para a meia-noite? "+contaMeiaNoite+" segundos");
+        System.out.println("\n"+"------------------------------------------------------");
+        System.out.println("Quantos segundos se passaram desde às 0h00min0s? "+contaSegundosPassados+" segundos"+
+        "\n"+"Quantos segundos faltam para a meia-noite? "+contaMeiaNoite+" segundos"+"\n"
+        +"------------------------------------------------------");
     }
     
 }
