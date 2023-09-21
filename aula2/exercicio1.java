@@ -5,33 +5,41 @@ import java.util.Scanner;
             int interInicio;
             int interFim;
 
-            System.out.println("Programa Números Primos");
+            System.out.println("\n"+"-------------------------------"
+            +"\n"+"Programa Números Primos"+"\n");
 
             System.out.println("Digite o número inicial: ");
             interInicio = tec.nextInt();
             System.out.println("Digite o número final: ");
             interFim = tec.nextInt();
 
-
+            System.out.println("-------------------------------"+"\n"+
+            "Número Primos nesse intervalo de valores:"+"\n");
 
             for (int i = interInicio; i <= interFim; i++) {
                 if (ehPrimo(i)) {
-                    System.out.println(i+ " é primo.");
+                    System.out.println(i+ " ");
                 }
             }
+
         }
 
 
             private static boolean ehPrimo (int numero) {
-                for (int j = 1; j < numero; j++) {
-
-                    if (numero % j == 0) {
+                
+                if( numero <= 1) {
+                    return false;
+                }
+                for(int i=2; i<= numero-1; i++) {
+                    if(numero % i==0){
                         return false;
                     }
                 }
-                return true;
+            
+            return true;
             }
-        }
+    }
+        
 
 
 
