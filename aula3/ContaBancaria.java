@@ -15,6 +15,8 @@ public class ContaBancaria {
 
     //metodos funções
 
+    //-------sacar-------------------
+
     public void saque (double valor){
         //System.out.printf("Digite o valor que deseja sacar: R$");
         //valor = tec.nextDouble();
@@ -25,15 +27,23 @@ public class ContaBancaria {
             System.out.println("Erro, saldo insuficiente!!!");
         }
     }
+
+    //----------depositar-----------
+
     public void deposito(double valor){
         
         saldo +=valor;
         System.out.println("Você depositou R$"+valor);
     }
 
-    public void pix(double valor){
+    //---------- fazer pix ---------------
 
+    public void pix(double valor){
+        
     }
+
+    //----------transferir----------------
+
     public void transferencia(ContaBancaria destino, double valor){
 
     }
