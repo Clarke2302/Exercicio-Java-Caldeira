@@ -1,5 +1,3 @@
-import java.time.LocalDateTime;
-
 public class Main {
     public static void main(String[] args) {
         ContaBancaria cb = new ContaBancaria("Ronaldo Guto", "367.748.738-36",53627272,"CBS Bank","Rua dos Monges, 123",1500);
@@ -22,7 +20,9 @@ public class Main {
         cb.verificarInfo(cb);
 
         //faz pix
-        cb.pix(4000);
+        cb.pix(cb,200);
+
+        //
 
         
 
