@@ -1,6 +1,5 @@
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 public class ContaBancaria {
     Scanner tec = new Scanner(System.in);
@@ -25,6 +24,14 @@ public class ContaBancaria {
 
     //metodos funções
 
+    //criei horario
+    java.time.format.DateTimeFormatter dtf2 = java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss");
+    java.time.format.DateTimeFormatter dataEntrada = java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss");
+    java.time.format.DateTimeFormatter dataSaida = java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss");
+    
+
+
+
     //-------sacar-------------------
 
     public void saque (double valor){
@@ -48,7 +55,7 @@ public class ContaBancaria {
 
     //---------- fazer pix --------------- //realiza transf verificando saldo e horário atual
 
-    public void pix(double valor){
+    public void pix(ContaBancaria destino ,double valor){
         System.out.println("-----------------------------------------");
 
         if(valor==saldo||valor<saldo){
@@ -64,6 +71,17 @@ public class ContaBancaria {
 
     public void transferencia(ContaBancaria destino, double valor){
         System.out.println("-----------------------------------------");
+        
+        String atual = dtf2.format(LocalDateTime.now());
+        dataEntrada.parse("08:00:00");
+        dataSaida.parse("19:00:00");
+
+        if(atual.after(dataSaida) && atual.before(dataEntrada) && valor<=saldo){
+            saldo -= valor;
+            System.out.println("Você fez uma tranferência de R$"+valor);
+        }else{
+            System.out.println("Sua transferência não ocorreu, nosso funcionamento é das 8hrs às 19:00hrs !"+"\n"+"Confira seu saldo e tente novamente mais tarde!");
+        }
 
 
     }
@@ -75,7 +93,6 @@ public class ContaBancaria {
     public void verificarHorario(){
         System.out.println("-----------------------------------------");
 
-        java.time.format.DateTimeFormatter dtf2 = java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss");
         System.out.println(dtf2.format(LocalDateTime.now()));
 
     }
