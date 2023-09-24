@@ -9,6 +9,7 @@ public class ContaBancaria {
     String banco;
     String endereco;
     double saldo;
+    LocalDateTime horarioAtual;
 
 
     //construtor
@@ -20,14 +21,14 @@ public class ContaBancaria {
         this.banco=banco;
         this.endereco=endereco;
         this.saldo=saldo;
+        this.horarioAtual = LocalDateTime.now();
     }
 
     //metodos funções
 
     //criei horario
     java.time.format.DateTimeFormatter dtf2 = java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss");
-    java.time.format.DateTimeFormatter dataEntrada = java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss");
-    java.time.format.DateTimeFormatter dataSaida = java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss");
+    
     
 
 
@@ -53,7 +54,7 @@ public class ContaBancaria {
         System.out.println("Você depositou R$"+valor);
     }
 
-    //---------- fazer pix --------------- //realiza transf verificando saldo e horário atual
+    //---------- fazer pix ---------------
 
     public void pix(ContaBancaria destino ,double valor){
         System.out.println("-----------------------------------------");
@@ -72,37 +73,45 @@ public class ContaBancaria {
     public void transferencia(ContaBancaria destino, double valor){
         System.out.println("-----------------------------------------");
         
-        String atual = dtf2.format(LocalDateTime.now());
-        dataEntrada.parse("08:00:00");
-        dataSaida.parse("19:00:00");
+            String[] splitHour = dtf2.format(horarioAtual).split(":");
+            int hour = Integer.parseInt(splitHour[0]);
 
-        if(atual.after(dataSaida) && atual.before(dataEntrada) && valor<=saldo){
-            saldo -= valor;
-            System.out.println("Você fez uma tranferência de R$"+valor);
-        }else{
-            System.out.println("Sua transferência não ocorreu, nosso funcionamento é das 8hrs às 19:00hrs !"+"\n"+"Confira seu saldo e tente novamente mais tarde!");
+            if (hour >= 8 && hour <= 19) {
+                if (saldo >= valor) {
+                    this.saldo = saldo - valor;
+                    destino.saldo = saldo + valor;
+                    System.out.println("Você fez uma tranferência de R$"+valor + " realizada para " + destino.nome);
+                } else {
+                    System.out.println("Confira seu saldo e tente novamente!");
+                }
+            } else {
+                System.out.println("Estamos fora do horário de serviço, nosso funcionamento é das 8hrs às 19:00hrs !");
+            }
         }
+        
+    //-------ver saldo-----------------
 
-
-    }
     public void verificarSaldo(){
         System.out.println("-----------------------------------------");
         System.out.println("Seu saldo agora é de R$"+saldo);
 
     }
+    //-------ver hora-----------------
+
     public void verificarHorario(){
         System.out.println("-----------------------------------------");
-
-        System.out.println(dtf2.format(LocalDateTime.now()));
+        System.out.println("Horário: ");
+        System.out.printf(dtf2.format(LocalDateTime.now()));
 
     }
+    //-------ver informações da conta-----------------
 
     public void verificarInfo(ContaBancaria usuario){
 
-        System.out.println("------------------------------------------"+
+        System.out.println("\n"+"------------------------------------------"+
                 "\n"+getNome()+"\n"+getCpf()+"\n"+getIdentificadorConta()+
-                "\n"+getBanco()+"\n"+getEndereco()+"\n"+getSaldo()+"\n");
-        System.out.println("------------------------------------------");
+                "\n"+getBanco()+"\n"+getEndereco()+"\n"+getSaldo());
+        
     }
 
 
@@ -154,6 +163,14 @@ public class ContaBancaria {
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    public LocalDateTime getHorarioAtual(){
+        return horarioAtual;
+    }
+    
+    public void  setHorarioAtual(){
+        this.horarioAtual = horarioAtual;
     }
 
     //data
