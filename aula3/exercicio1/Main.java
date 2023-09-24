@@ -22,7 +22,9 @@ public class Main {
         //faz pix
         cb.pix(cb,200);
 
-        //
+        //transferencia
+
+        cb.transferencia(cb,600);
 
         
 
