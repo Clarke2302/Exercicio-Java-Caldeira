@@ -1,5 +1,8 @@
 package exercicio3;
+public interface Tributavel {
 
-public class Tributavel {
+    public double calculaTributos();
+        
     
 }
+
