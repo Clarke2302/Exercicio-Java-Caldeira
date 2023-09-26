@@ -3,7 +3,7 @@ package exercicio1;
 public class Moto extends Veiculo{
     //duas classes concretas que herdem de Veiculo
 
-    private double custo = 0.15;
+    private double custoPorKM = 0.15;
     private int distancia;
 
     public Moto (int distancia){
@@ -11,10 +11,10 @@ public class Moto extends Veiculo{
     }
 
     
-    @Override
+    double custoViagem;
     public double calcularCustoViagem(){
-        double custoViagem = custo/distancia;
-        return custoViagem;
+        return custoViagem = custoPorKM*distancia;
+        
     }
 }
 

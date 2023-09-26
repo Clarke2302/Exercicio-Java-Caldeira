@@ -1,12 +1,16 @@
 package exercicio1;
-
 public class Main {
 
-    Carro c1 = new Carro(20);
-    Moto m1 = new Moto(30);
-
-    c1.calcularCustoViagem();
-    m1.calcularCustoViagem();
-
+    public static void main(String[] args) {
+        
     
+    Veiculo c1 = new Carro(500);
+    Veiculo m1 = new Moto(100);
+
+    System.out.println("----------------------------------------"+"\n");
+    System.out.println("O custo da viagem de carro foi de R$"+c1.calcularCustoViagem());
+    System.out.println("O custo da viagem de moto foi de R$"+m1.calcularCustoViagem());
+    System.out.println("--------------------------------------");
+
+    }
 }
