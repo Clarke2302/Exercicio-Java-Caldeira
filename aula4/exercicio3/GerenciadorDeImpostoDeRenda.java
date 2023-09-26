@@ -1,6 +1,6 @@
 package exercicio3;
 
-public class GerenciadorDeImpostoDeRenda extends Conta {
+public class GerenciadorDeImpostoDeRenda implements Tributavel {
     double somaAtributos;
     
     
@@ -10,8 +10,10 @@ public class GerenciadorDeImpostoDeRenda extends Conta {
         
     }
 
-    //public double calculaTributos(){
-        
-        //}
+    public double calculaTributos(){
+        if(ContaCorrente == objeto ){
+
+            }
+        }
     }
 
