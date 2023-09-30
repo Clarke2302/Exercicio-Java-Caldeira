@@ -33,7 +33,6 @@ public class Tarefa {
     }
 
     public void addTarefa(){
-        int j=1;
         
         System.out.println("-------------------------------------"+"\n");
         System.out.printf("Adicione a tarefa: "+"\n");
@@ -46,7 +45,7 @@ public class Tarefa {
         System.out.printf("Dia da Semana: ");
         this.data = teclado.nextLine();
 
-        tarefas.add("Dia da Semana: "+data+" Titulo: "+titulo+" Descrição: "+descricao);
+        tarefas.add("Dia da Semana: "+data+" | Titulo: "+titulo+" | Descrição: "+descricao);
         System.out.println("------------------------------------");
         
         
