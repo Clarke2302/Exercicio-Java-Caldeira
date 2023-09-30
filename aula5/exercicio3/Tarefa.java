@@ -1,8 +1,15 @@
+package exercicio3;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class exercicio3 {
+public class Tarefa {
+    String titulo;
+    String data;
+    String descricao;
+
+    
     Scanner teclado = new Scanner(System.in);
 
     public void mostraMenu(){
@@ -12,23 +19,37 @@ public class exercicio3 {
         System.out.println("3 - Remover tarefas da lista:");
         System.out.println("4 - Exibir todas as tarefas: ");
         System.out.println("HELP - Se não sabe qual o índice, digite 4 para " +
-                "exibir todas as tarefas e o índice estará à esquerda de cada tarefa!.");
+                "exibir todas as tarefas e o índice estará à esquerda de cada tarefa!");
 
         System.out.printf("Digite a opção: ");
     }
+
     List<String> tarefas = new ArrayList<String>(); //lista criada
+
     public void criaLista(){
 
         System.out.println("-------------------------------------");
         System.out.println("Lista de Tarefas criada!" + "\n");
     }
-    public void addTarefa(){
-        System.out.println("-------------------------------------");
-        System.out.println("Adicione a tarefa: ");
-        String addTarefa = teclado.nextLine();
-        tarefas.add(addTarefa);
-        System.out.println("Gostaria de adicionar mais uma tarefa?");
 
+    public void addTarefa(){
+        int j=1;
+        
+        System.out.println("-------------------------------------"+"\n");
+        System.out.printf("Adicione a tarefa: "+"\n");
+        System.out.printf("Título: ");
+        this.titulo = teclado.nextLine();
+        
+        System.out.printf("Descrição: ");
+        this.descricao = teclado.nextLine();
+
+        System.out.printf("Dia da Semana: ");
+        this.data = teclado.nextLine();
+
+        tarefas.add("Dia da Semana: "+data+" Titulo: "+titulo+" Descrição: "+descricao);
+        System.out.println("------------------------------------");
+        
+        
     }
     public void removeTarefa(){
         System.out.println("-------------------------------------");
@@ -39,7 +60,7 @@ public class exercicio3 {
             System.out.println("-------------------------------------");
             if (indice == removeTarefa) {
                 tarefas.remove(indice);
-                System.out.println("Tarefa ("+ tarefas.get(indice)+") removida!");
+                System.out.println("Tarefa do indice "+indice+" removida!");
             }
         }
     }
@@ -63,7 +84,7 @@ public class exercicio3 {
         // Tarefa deve ser uma classe do seu código com os atributos:
         // titulo, data e descrição e métodos que você julgue necessários.
         int tecla=1;
-        exercicio3 ex = new exercicio3();
+        Tarefa ex = new Tarefa();
 
         while(tecla!=0) {
 
