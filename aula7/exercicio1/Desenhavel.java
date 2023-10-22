@@ -4,5 +4,9 @@ public interface Desenhavel{
 //Crie uma interface chamada Desenhavel com um método desenhar().
 
 
+
+private void desenhar(){
+    System.out.println("Vou desenhar o nomedafigura.");
+}
 //---> O método desenhar pode só criar um print na dela dizendo "vou desenhar o 'nomedafigura'.
 }
