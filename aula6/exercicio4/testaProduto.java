@@ -12,7 +12,7 @@ public class testaProduto {
         //imprima a lista de produtos na ordem em que foram inseridos, exibindo o nome do produto e seu preço.
         
 
-        LinkedHashMap<String, Double> lk = new LinkedHashMap<>(6);
+        LinkedHashMap<String, Double> lk = new LinkedHashMap<>();
 
         lk.put("Sabonete Dove", 12.50);
         lk.put("Desodorante Rexona Flash", 27.30);
