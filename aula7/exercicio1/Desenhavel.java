@@ -5,7 +5,7 @@ public interface Desenhavel{
 
 
 
-private void desenhar(){
+public static void desenhar(){
     System.out.println("Vou desenhar o nomedafigura.");
 }
 //---> O método desenhar pode só criar um print na dela dizendo "vou desenhar o 'nomedafigura'.
