@@ -5,31 +5,34 @@ public class Main {
     //Escreva um programa que aceite um dia da semana do usuário
     //imprima uma mensagem de acordo com o dia escolhido.
 
+
     Scanner tec = new Scanner(System.in);
 
     menuzinho();
-    String diaDigitado = tec.next().toUpperCase();
-    DiaDaSemana dia = diaDigitado;
+    
+    
+    String diaDigitado = String.valueOf(tec.next().toUpperCase());
+    
 
-        if(dia == DiaDaSemana.SEGUNDA){
+        if(diaDigitado.equals(DiaDaSemana.SEGUNDA.toString())){
             segunda();
         }
-        if(dia == DiaDaSemana.TERCA){
+        if(diaDigitado.equals(DiaDaSemana.TERCA.toString())){
             terca();
         }
-        if(dia == DiaDaSemana.QUARTA){
+        if(diaDigitado.equals(DiaDaSemana.QUARTA.toString())){
             quarta();
         }
-        if(dia == DiaDaSemana.QUINTA){
+        if(diaDigitado.equals(DiaDaSemana.QUINTA.toString())){
             quinta();
         }
-        if(dia == DiaDaSemana.SEXTA){
+        if(diaDigitado.equals(DiaDaSemana.SEXTA.toString())){
             sexta();
         }
-        if(dia  == DiaDaSemana.SABADO){
+        if(diaDigitado .equals(DiaDaSemana.SABADO.toString())){
             sabado();
         }
-        if(dia == DiaDaSemana.DOMINGO){
+        if(diaDigitado.equals(DiaDaSemana.DOMINGO.toString())){
             domingo();
         }
     }
@@ -37,32 +40,38 @@ public class Main {
     //Função menuzinho
 
     public static void menuzinho(){
-        System.out.println("==============MENU==============="+"\n");
-        System.out.println("========Dia==da==Semana========"+"\n");
-        System.out.println("Digite um dia da semana (EX: SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADÕ, DOMINGO):  ");
+        System.out.println("==============MENU==============="+"\n"+"================================="+"\n"+"        Dia da Semana "+"\n");
+        System.out.println("Digite um dia da semana (EX: SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADO, DOMINGO):  ");
     }
 
     //Funções dias
 
     public static void segunda(){
+        System.out.println("\n"+"--> Sua mensagem do dia é:"+"\n"+"=============================================="+"\n");
         System.out.println("Eita hoje é segunda, o PIOR DIA de acordo com o Garfield!");
     }
     public static void terca(){
+        System.out.println("\n"+"--> Sua mensagem do dia é:"+"\n"+"=============================================="+"\n");
         System.out.println("Terça-feira, um dia legal mas não é sexta!");
     }
     public static void quarta(){
+        System.out.println("\n"+"--> Sua mensagem do dia é:"+"\n"+"=============================================="+"\n");
         System.out.println("Quarta um dia lindo porque foi o dia em que eu nasci, talvez seja o seu também!");
     }
     public static void quinta(){
+        System.out.println("\n"+"--> Sua mensagem do dia é:"+"\n"+"=============================================="+"\n");
         System.out.println("Quinta o Dia do TBT, tá quaseeee...");
     }
     public static void sexta(){
+        System.out.println("\n"+"--> Sua mensagem do dia é:"+"\n"+"=============================================="+"\n");
         System.out.println("Irrraa chegamos na Sexta, SEXTOUUU.");
     }
     public static void sabado(){
+        System.out.println("\n"+"--> Sua mensagem do dia é:"+"\n"+"=============================================="+"\n");
         System.out.println("Sábado um dia para RELAXAR.");
     }
     public static void domingo(){
+        System.out.println("\n"+"--> Sua mensagem do dia é:"+"\n"+"=============================================="+"\n");
         System.out.println("Olá dia de dormir e descansar, porque amanhã tem mais!");
     }
     
