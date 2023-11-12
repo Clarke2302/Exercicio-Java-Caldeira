@@ -9,12 +9,33 @@ public interface Calculavel {
 
     //Métodos
 
-    public void adicionar();
+    public static void adicionar(int val1, int val2){
+    int soma = val1 + val2;
+        System.out.println(val1+" + "+val2+" = "+soma);
+    }
 
-    public void subtrair();
-
-    public void multiplicar();
-
-    public void dividir();
-    
+    public static void subtrair(int val1, int val2){
+        if(val2>val1) {
+            int sub = val2 - val1;
+            System.out.println(val2+" - "+val1+" = "+sub);
+        }
+        if(val1>val2){
+        int sub = val1 - val2;
+            System.out.println(val1+" - "+val2+" = "+sub);
+        }
+    }
+    public static void multiplicar(int val1, int val2) {
+        int multi = val1 * val2;
+        System.out.println(val1+" * "+val2+" = "+multi);
+    }
+    public static void dividir(int val1, int val2) {
+        if(val2>val1) {
+            int div = val2/val1;
+            System.out.println(val2+" / "+val1+" = "+div);
+        }
+        if(val1>val2){
+            int div = val1/val2;
+            System.out.println(val1+" / "+val2+" = "+div);
+        }
+    }
 }
