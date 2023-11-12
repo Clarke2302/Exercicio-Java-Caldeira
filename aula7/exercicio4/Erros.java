@@ -1,6 +1,9 @@
 package exercicio4;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import static exercicio4.Calculavel.*;
+
 public class Erros {
 
     public static void main(String[] args) {//Crie um programa que solicite ao usuário que insira dois números inteiros.
@@ -10,7 +13,7 @@ public class Erros {
         int seg;
 
 
-        System.out.println("\n"+"--------------Números Inteiros---------------"+"\n");
+        System.out.println("\n"+"--------------Programa Números Inteiros---------------"+"\n");
         
         try{
 
@@ -24,12 +27,53 @@ public class Erros {
         catch(InputMismatchException ex){
             //TRATAMENTO DA exceção
             System.out.println("\n"+"O número inserido não é um número inteiro, por isso para solucionar esse problema, foi inserido dois valores DEFAULT.");
-            prim = 57;
-            seg = 12;
+            prim = 9;
+            seg = 3;
             //exiba uma mensagem de erro apropriada.
             
         }
-            System.out.println("\n"+"Números: "+"\n"+"---> "+prim+"\n"+"---> "+seg);
+        try{
+            System.out.println("Agora digite o nome da operação a ser realizada:" +"\n"+
+                    "EXEMPLO: " +"\n"+
+                    "SOMAR, " +"\n"+
+                    "SUBTRAIR, " +"\n"+
+                    "MULTIPLICAR, " +"\n"+
+                    "DIVIDIR): "+"\n");
+
+            String operacao = String.valueOf(tec.next().toUpperCase());
+
+            if(operacao.equals(usaMetodos.SOMAR.toString())){
+                adicionar(prim, seg);
+            }
+            if(operacao.equals(usaMetodos.SUBTRAIR.toString())){
+                subtrair(prim,seg);
+            }
+            if(operacao.equals(usaMetodos.MULTIPLICAR.toString())){
+                multiplicar(prim,seg);
+            }
+            if(operacao.equals(usaMetodos.DIVIDIR.toString())){
+                dividir(prim,seg);
+            }
+
+        }
+        catch (ArithmeticException exc){ //Trate exceções adequadamente para situações como divisão por zero
+
+
+            if(prim==0){
+                System.out.println("Não se pode dividir um número por zero!!!!");
+                prim++;
+                System.out.println("Trocamos o valor do primeiro número para: "+prim);
+                System.out.println("Então a divisão fica: ");
+                dividir(prim,seg);
+            }else if(seg==0){
+                System.out.println("Não se pode dividir um número por zero!!!!");
+                seg++;
+                System.out.println("Trocamos o valor do segundo número para: "+seg);
+                System.out.println("Então a divisão fica: ");
+                dividir(prim,seg);
+            }
+        }
+
         
 
     }
